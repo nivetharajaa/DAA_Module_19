@@ -1,7 +1,7 @@
 # EX 1C Quick Sort
-## DATE:
+## DATE:18.02.25
 ## AIM:
- To Write a python program to implement quick sort on the given values and print the sorted list and pivot value of each iteration
+Write a python program to implement quick sort on the given float  array values.
 
 ## Algorithm
 1. Select a pivot element from the array (commonly the first or last element).
@@ -14,45 +14,29 @@
 ```
 /*
 Program to implement implement quick sort using the last element as pivot on the list of float values.
-Developed by: Danish Nicho N
-Register Number: 212222040030 
+Developed by: Nivetha A
+Register Number: 212222230101
 */
 ```
 ```
-def partition(array, low, high):
-    pivot = array[low]
-    start = low + 1
-    end = high
-    print("pivot: ",pivot)
-    while True:
-        while start <= end and array[end] >= pivot:
-            end = end - 1
-        while start <= end and array[start] <= pivot:
-            start = start + 1
-        if start <= end:
-            array[start], array[end] = array[end], array[start]
-        else:
-            break
-    array[low], array[end] = array[end], array[low]
-    return end
-def quick_sort(array, start, end):
-    if start < end:
-        idx = partition(array, start, end)
-        quick_sort(array, start, idx-1)
-        quick_sort(array, idx+1, end)
-arr1=[]
+def qsort(L):
+    if L==[]:
+        return[]
+    pivot=L[0:1]
+    left=qsort([x for x in L[1:]if x<L[0]])
+    right=qsort([x for x in L[1:]if x>=L[0]])
+    print("left: ",left)
+    print("right: ",right)
+    return left+pivot+right
+list1=[]
 n=int(input())
 for i in range(n):
-    arr1.append(int(input()))
-print("Input List\n",arr1)
-quick_sort(arr1, 0, len(arr1)-1)
-print("Sorted List\n",arr1)
+    list1.append(float(input()))
+print(qsort(list1))
  ```
 
 ## Output:
-![Screenshot 2025-04-26 103158](https://github.com/user-attachments/assets/146028cb-9f62-4172-8700-fb3ab7855311)
-
-
+![image](https://github.com/user-attachments/assets/60f6f2e2-4dd2-429f-aff9-50e450fc6ff5)
 
 
 ## Result:
