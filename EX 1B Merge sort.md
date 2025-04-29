@@ -1,5 +1,5 @@
 # EX 1B Merge Sort
-## DATE:
+## DATE:15.02.25
 ## AIM:
 To Write a Program for Implementing merge sort using python recursion
 
@@ -14,63 +14,60 @@ To Write a Program for Implementing merge sort using python recursion
 ```
 /*
 Program to implement Merge Sort
-Developed by: Danish Nicho N
-Register Number: 212222040030 
+Developed by:Nivetha A
+Register Number: 212222230101
 */
 ```
 
 ```
-def merge_sort(inp_arr):
-    size = len(inp_arr)
-    if size > 1:
-        middle = size // 2
-        left_arr = inp_arr[:middle]
-        right_arr = inp_arr[middle:]
- 
-        merge_sort(left_arr)
-        merge_sort(right_arr)
- 
-        p = 0
-        q = 0
-        r = 0
- 
-        left_size = len(left_arr)
-        right_size = len(right_arr)
-        while p < left_size and q < right_size:
-            if left_arr[p] < right_arr[q]:
-              inp_arr[r] = left_arr[p]
-              p += 1
-            else:
-                inp_arr[r] = right_arr[q]
-                q += 1
-             
-            r += 1
- 
-        
-        while p < left_size:
-            inp_arr[r] = left_arr[p]
-            p += 1
-            r += 1
- 
-        while q < right_size:
-            inp_arr[r]=right_arr[q]
-            q += 1
-            r += 1
- 
-inp_arr=[]
-n=int(input())
-for i in range(0,n):
-    inp_arr.append(int(input()))
-print("Input Array:\n")
-print(inp_arr)
-merge_sort(inp_arr)
-print("Sorted Array:\n")
-print(inp_arr)
+def merge(left, right):
+    result = []
+    i = j = 0
+    # Merge the two sorted halves
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    # Append remaining elements
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+def merge_sort(arr):
+    # Base case: If the array has one or zero elements, it's already sorted
+    if len(arr) <= 1:
+        return arr
+    
+    # Divide the array into two halves
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])  # Recursively sort the left half
+    right = merge_sort(arr[mid:])  # Recursively sort the right half
+
+    # Merge the sorted halves
+    return merge(left, right)
+
+# Input handling
+n = int(input())
+arr = []
+
+for _ in range(n):
+    val = int(input())
+    arr.append(val)
+
+print("Given array is")
+print(*arr)  # Print the original array
+sorted_arr = merge_sort(arr)
+print("Sorted array is")
+print(*sorted_arr)  # Print the sorted array
+
+
 ```
 
 ## Output:
-![Screenshot 2025-04-26 101850](https://github.com/user-attachments/assets/f83c9b4d-5876-4040-b28f-075a5d44c42d)
-
+![image](https://github.com/user-attachments/assets/c3d4ffd9-8f64-409a-8aee-3bee3effaadc)
 
 
 
