@@ -1,6 +1,6 @@
 # EX 1A Reverse a String
-## DATE:
-## AIM:m
+## DATE:11.02.25
+## AIM:
 To Write a Program to Create a recursive function to reverse a string
 
 ## Algorithm
@@ -14,30 +14,29 @@ To Write a Program to Create a recursive function to reverse a string
 ```
 /*
 Program to implement Reverse a String
-Developed by: Danish Nicho N
-Register Number: 212222040030
+Developed by: Nivetha A
+Register Number: 212222230101
 */
 ```
 ```
 
 def reverse_string(s):
-    """
-    Recursive function to reverse a string
-    """
-    if len(s) <= 1:  # base case: if the string is empty or has only one character, return it as is
+    # Base case
+    if len(s) <= 1:
         return s
-    else:
-        return reverse_string(s[1:]) + s[0]  
+    # Recursive case
+    return reverse_string(s[1:]) + s[0]
 
-
-input_string = input()
-reversed_string = reverse_string(input_string)
-print(reversed_string) 
+# Get input from user
+user_input = input()
+reversed_str = reverse_string(user_input)
+print(reversed_str)
 
 ```
 
 ## Output:
-![Screenshot 2025-04-26 101504](https://github.com/user-attachments/assets/7bac129d-03e6-4500-8171-c22addc6f7f2)
+![image](https://github.com/user-attachments/assets/e9a32c25-a0de-45b9-a327-04c0226e5a4e)
+
 
 
 
