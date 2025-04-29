@@ -1,9 +1,7 @@
 # EX 1D Linear search
-## DATE:
+## DATE:22.02.25
 ## AIM:
-To Write a python program to implement linear search on the given tuple
-
-
+To write a python program for a search function with parameter list name and the value to be searched using string values.
 
 ## Algorithm
 1. Loop through each element in the tuple.
@@ -16,8 +14,8 @@ To Write a python program to implement linear search on the given tuple
 ```
 /*
 Program to implement a search function with parameter list name and the value to be searched using string values.
-Developed by: Danish Nicho N
-Register Number: 212222040030
+Developed by: Nivetha A
+Register Number: 212222230101
 */
 ```
 ```
@@ -38,8 +36,8 @@ search(tuple1,x)
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/229f998a-4722-4e31-85b0-2e17f03f013e)
 
+![image](https://github.com/user-attachments/assets/6c9b9809-bdbb-4eb0-b25e-622afb1caa04)
 
 
 ## Result:
